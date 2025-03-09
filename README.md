@@ -8,7 +8,7 @@ You do not have to see that anymore. I created this GitHub Actions workflow guid
 This guide is only for educational purposes. I just want to people to learn how to setup GitHub Actions, save  time, and save money :) 
 
 ## Context  
-Vercel has disabled collaboration on the Hobby plan. This means that only the repository owner is able to commit and deploy the changes to a Vercel Hobby project. Now users have to be invited to a team and pay U$20/month per user to collaborate. 
+Vercel has disabled collaboration on the Hobby plan. This means that only the repository owner is able to commit and deploy the changes to a Vercel Hobby private project. Now users have to be invited to a team and pay U$20/month per user to collaborate. 
 
 I love Vercel and their services (in fact, I use Vercel for everything and have bought many domains using Vercel), but there is no way that I'm paying U$20/month for each user on a project. I find that really crazy. If I have 5 people working on a repository, it'll be U$100/month for one team. Say I have many teams: that might cost thousands of dollars a month. 
 
@@ -98,7 +98,7 @@ jobs:
 ## FAQ 
 1. #### How do I create a ```.github/workflows``` folder? 
    1. **IDE:** This can be done manually by creating a ```.github``` folder and a ```workflows``` folder inside and pushing your changes 
-   2. **Github.com:** Go to the repository on github.com and click ```Actions``` then ```set up a workflow yourself```which will automatically create a ```.github/workflows``` folder. 
+   2. **Github.com:** Go to the repository on github.com and click ```Actions``` then ```set up a workflow yourself``` which will automatically create a ```.github/workflows``` folder. 
    
 2. #### Where do I find my VERCEL_ORG_ID? 
    1. This can be found on https://vercel.com/[your-team-name] on the ```Settings``` tab
@@ -136,8 +136,8 @@ Collaborators are welcome! Feel free to help me if I'm missing anything or if yo
 
 ## Tags (ignore)
 - Vercel Hobby Plan Collaboration 
-- Vercel Hobby Tier Collaboration 
-- Vercel Free Tier Collaboration 
+- Vercel Free Plan Collaboration 
 - Vercel Hobby Plan Deployment 
 - Vercel Hobby Plan CI/CD 
-- Vercel Hobby Plan Automatic Deployment GitHub Actions 
+- Vercel Hobby Plan Automatic Deployment GitHub Actions
+- Git author must have access to the project on Vercel to create deployments. 
