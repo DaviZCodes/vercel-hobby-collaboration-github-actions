@@ -13,6 +13,16 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
+
+      - name: Create Local Commit for Vercel
+        run: |
+          echo "Creating local-only empty commit with correct author..."
+          git config user.name "Vercel Owner Username"
+          git config user.email "Email with access to the Vercel Deployment"
+          git commit --allow-empty -m "Trigger Vercel Deployment [CI]" \
+            --author="user <email@with.access>" || echo "No commit created"
+          git log -1 --pretty=full
+
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
       - name: Build Project Artifacts
