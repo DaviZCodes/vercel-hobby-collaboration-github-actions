@@ -18,8 +18,6 @@ This is just the better (and free) alternative if you're just trying to collabor
 
 ---
 
-# DEPRECATED (THIS WORKAROUND DOES NOT WORK SINCE AUGUST 2025, will try to find a way)
-
 ## How to setup the workflow? (For production environments)?
 
 1. Create a `.github` folder in the root folder of your application
@@ -41,6 +39,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Strip Git metadata for Vercel
+        run: rm -rf .git
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information
@@ -76,7 +76,7 @@ jobs:
 3. Inside the `.github/workflows` folder, create a `preview.yaml` file
 4. Copy the following code snippet and paste it to the `preview.yaml` file, then commit your changes
    1. Please note that it adds `main` to `branches-ignore:` which means all branches can trigger the workflow
-   2. Configure to your needs and add your `[branch-name]` to a `branch:` if you only want the workflow to run on a specific branch
+   2. Configure to your needs and add your `[branch-name]` to a `branches:` if you only want the workflow to run on a specific branch
 
 ```
 name: Vercel Preview Deployment
@@ -92,6 +92,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Strip Git metadata for Vercel
+        run: rm -rf .git
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information
